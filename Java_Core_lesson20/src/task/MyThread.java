@@ -8,7 +8,7 @@ public class MyThread extends Thread {
 
 	@Override
 	public void run() {
-		System.out.print("Введіть кількість чисел Фібоначі: ");
+		System.out.println("Введіть кількість чисел Фібоначі: ");
 		this.fibonachi = new int[scanner.nextInt()];
 		if (this.fibonachi.length == 0) {
 			
@@ -21,9 +21,10 @@ public class MyThread extends Thread {
 				this.fibonachi[i] = this.fibonachi[i - 1] + this.fibonachi[i - 2];
 			}
 		}
-
+		
+		
 		for (int i = 0; i < this.fibonachi.length; i++) {
-			System.out.println(this.fibonachi[i]);
+			System.out.println("Потік Thread: "+this.fibonachi[i] + " ");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -34,9 +35,4 @@ public class MyThread extends Thread {
 
 }
 
-class ApplicationMyTherad {
-	public static void main(String[] args) {
-		MyThread thread = new MyThread();
-		thread.start();
-	}
-}
+

@@ -15,7 +15,7 @@ public class RunnableThread implements Runnable{
 
 	@Override
 	public void run() {
-		System.out.print("Введіть кількість чисел Фібоначі: ");
+		System.out.println("Введіть кількість чисел Фібоначі: ");
 		this.fibonachi = new int[scanner.nextInt()];
 		if (this.fibonachi.length == 0) {
 			
@@ -29,8 +29,9 @@ public class RunnableThread implements Runnable{
 			}
 		}
 
+		
 		for (int i = this.fibonachi.length-1; i >= 0; i--) {
-			System.out.println(this.fibonachi[i]);
+			System.out.println("Потік Runnable: "+this.fibonachi[i]);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -40,9 +41,4 @@ public class RunnableThread implements Runnable{
 	}
 }
 
-class ApplicationRunnableThread {
-	public static void main(String[] args) {
-		RunnableThread runnable = new RunnableThread();
-		
-	}
-}
+
